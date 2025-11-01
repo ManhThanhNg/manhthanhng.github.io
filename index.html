@@ -1,0 +1,30 @@
+# Canva redirect / proxy
+
+This folder contains two options to make a small site that immediately sends visitors to:
+
+https://thanhtl113.my.canva.site/
+
+1) Static redirect (easy)
+
+- Open `index.html` in a browser or serve it from any static host. It performs an immediate redirect using a meta-refresh and JavaScript fallback.
+
+2) Optional Node.js proxy (keeps your domain in the address bar)
+
+Files:
+- `proxy.js` — Express server that proxies requests to the Canva site using `http-proxy-middleware`.
+- `package.json` — package manifest with start script.
+
+Run (Windows PowerShell):
+
+```powershell
+cd C:\Users\thanh\Downloads
+npm install
+npm start
+```
+
+Then open http://localhost:8080 to see the proxied site.
+
+Notes & cautions:
+- Proxying third-party websites may violate their terms of service or copyright. Use this only for sites you control or have permission to mirror.
+- Some sites block being framed or proxied (CSP, cookies, mixed-content errors). If you see errors, try the simple redirect instead.
+- If you run this on a public server, secure the server (HTTPS, rate limits, logging) and be mindful of legal/ethical concerns.
